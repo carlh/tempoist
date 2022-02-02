@@ -14,6 +14,9 @@
 		C39CDF8627AA806200E22A57 /* TheTempoistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF8527AA806200E22A57 /* TheTempoistTests.swift */; };
 		C39CDF9027AA806200E22A57 /* TheTempoistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF8F27AA806200E22A57 /* TheTempoistUITests.swift */; };
 		C39CDF9227AA806200E22A57 /* TheTempoistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF9127AA806200E22A57 /* TheTempoistUITestsLaunchTests.swift */; };
+		C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */; };
+		C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */; };
+		C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA227AA883B00E22A57 /* BPMMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		C39CDF8B27AA806200E22A57 /* TheTempoistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheTempoistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39CDF8F27AA806200E22A57 /* TheTempoistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTempoistUITests.swift; sourceTree = "<group>"; };
 		C39CDF9127AA806200E22A57 /* TheTempoistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTempoistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTempoEngine.swift; sourceTree = "<group>"; };
+		C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainViewModel.swift; sourceTree = "<group>"; };
+		C39CDFA227AA883B00E22A57 /* BPMMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,10 @@
 		C39CDF7327AA806100E22A57 /* TheTempoist */ = {
 			isa = PBXGroup;
 			children = (
-				C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */,
-				C39CDF7627AA806100E22A57 /* ContentView.swift */,
-				C39CDF7827AA806200E22A57 /* Assets.xcassets */,
+				C39CDFA527AA888B00E22A57 /* domain */,
 				C39CDF7A27AA806200E22A57 /* Preview Content */,
+				C39CDFA627AA88A200E22A57 /* resources */,
+				C39CDFA427AA888500E22A57 /* screens */,
 			);
 			path = TheTempoist;
 			sourceTree = "<group>";
@@ -125,6 +131,33 @@
 				C39CDF9127AA806200E22A57 /* TheTempoistUITestsLaunchTests.swift */,
 			);
 			path = TheTempoistUITests;
+			sourceTree = "<group>";
+		};
+		C39CDFA427AA888500E22A57 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */,
+				C39CDFA227AA883B00E22A57 /* BPMMainView.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		C39CDFA527AA888B00E22A57 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		C39CDFA627AA88A200E22A57 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */,
+				C39CDF7627AA806100E22A57 /* ContentView.swift */,
+				C39CDF7827AA806200E22A57 /* Assets.xcassets */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */,
 				C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */,
 				C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */,
+				C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */,
+				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
