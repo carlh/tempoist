@@ -17,6 +17,7 @@
 		C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */; };
 		C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */; };
 		C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA227AA883B00E22A57 /* BPMMainView.swift */; };
+		C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA827AB4BFF00E22A57 /* Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTempoEngine.swift; sourceTree = "<group>"; };
 		C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainViewModel.swift; sourceTree = "<group>"; };
 		C39CDFA227AA883B00E22A57 /* BPMMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainView.swift; sourceTree = "<group>"; };
+		C39CDFA827AB4BFF00E22A57 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		C39CDF7327AA806100E22A57 /* TheTempoist */ = {
 			isa = PBXGroup;
 			children = (
+				C39CDFA727AB4BEB00E22A57 /* components */,
 				C39CDFA527AA888B00E22A57 /* domain */,
 				C39CDF7A27AA806200E22A57 /* Preview Content */,
 				C39CDFA627AA88A200E22A57 /* resources */,
@@ -158,6 +161,14 @@
 				C39CDF7827AA806200E22A57 /* Assets.xcassets */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		C39CDFA727AB4BEB00E22A57 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				C39CDFA827AB4BFF00E22A57 /* Background.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */,
 				C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */,
 				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
+				C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
