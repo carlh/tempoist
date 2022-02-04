@@ -26,6 +26,7 @@ struct BPMMainView: View {
                 .background(.ultraThinMaterial)
                 .clipShape(Circle())
                 .offset(y: -150)
+                .shadow(radius: 20)
                 
                 Button {
                     vm.tap()
