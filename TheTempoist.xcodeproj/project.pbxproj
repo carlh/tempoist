@@ -18,6 +18,8 @@
 		C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */; };
 		C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA227AA883B00E22A57 /* BPMMainView.swift */; };
 		C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDFA827AB4BFF00E22A57 /* Background.swift */; };
+		C3BAA2E627AFFE2F0019B81E /* BPMDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAA2E527AFFE2F0019B81E /* BPMDisplay.swift */; };
+		C3BAA2E827AFFEDD0019B81E /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAA2E727AFFEDD0019B81E /* TapButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainViewModel.swift; sourceTree = "<group>"; };
 		C39CDFA227AA883B00E22A57 /* BPMMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMMainView.swift; sourceTree = "<group>"; };
 		C39CDFA827AB4BFF00E22A57 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		C3BAA2E527AFFE2F0019B81E /* BPMDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPMDisplay.swift; sourceTree = "<group>"; };
+		C3BAA2E727AFFEDD0019B81E /* TapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapButton.swift; sourceTree = "<group>"; };
+		C3BAA2E927AFFFD00019B81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 		C39CDF7327AA806100E22A57 /* TheTempoist */ = {
 			isa = PBXGroup;
 			children = (
+				C3BAA2E927AFFFD00019B81E /* Info.plist */,
 				C39CDFA727AB4BEB00E22A57 /* components */,
 				C39CDFA527AA888B00E22A57 /* domain */,
 				C39CDF7A27AA806200E22A57 /* Preview Content */,
@@ -167,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				C39CDFA827AB4BFF00E22A57 /* Background.swift */,
+				C3BAA2E527AFFE2F0019B81E /* BPMDisplay.swift */,
+				C3BAA2E727AFFEDD0019B81E /* TapButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -304,6 +312,8 @@
 				C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */,
 				C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */,
 				C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */,
+				C3BAA2E827AFFEDD0019B81E /* TapButton.swift in Sources */,
+				C3BAA2E627AFFE2F0019B81E /* BPMDisplay.swift in Sources */,
 				C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */,
 				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
 				C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */,
@@ -470,11 +480,12 @@
 				DEVELOPMENT_TEAM = GG2P773732;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TheTempoist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,11 +510,12 @@
 				DEVELOPMENT_TEAM = GG2P773732;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = TheTempoist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

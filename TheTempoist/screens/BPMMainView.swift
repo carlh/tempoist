@@ -14,30 +14,12 @@ struct BPMMainView: View {
         ZStack {
             Background()
             VStack(spacing: 64) {
-                VStack(spacing: 8) {
-                    Text("\(vm.tempo)")
-                        .font(.system(.largeTitle, design: .rounded))
-                        .fontWeight(.heavy)
-                    Text("BPM")
-                        .font(.system(.subheadline, design: .rounded))
-                        .fontWeight(.ultraLight)
-                }
-                .frame(width: 200, height: 200)
-                .background(.ultraThinMaterial)
-                .clipShape(Circle())
-                .offset(y: -150)
-                .shadow(radius: 20)
+                BPMDisplay(tempo: vm.tempo)
+                    .offset(y: -150)
                 
-                Button {
+                TapButton(label: vm.pendingTaps ?? "Tap") {
                     vm.tap()
-                } label: {
-                    Text(vm.pendingTaps ?? "Tap")
-                        .font(.system(.largeTitle, design: .rounded))
-                        .fontWeight(.light)
-                        .frame(width: 200, height: 55)
                 }
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.capsule)
             }
             .padding()
             
