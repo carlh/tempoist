@@ -12,6 +12,7 @@ extension BPMMainView {
     class ViewModel: ObservableObject {
         private let tapEngine = TapTempoEngine()
         private let haTimer = HighAccuracyTimer()
+        private let audioEngine = AudioEngine()
         
         private var store: [AnyCancellable] = []
         
@@ -58,9 +59,10 @@ extension BPMMainView {
         private func subscribeToTimer() {
             haTimer.timerFired
                 .sink { _ in
-                    #warning("Create AudioEngine and trigger playback of sound.")
                     #warning("Create HapticEngine and trigger vibration.")
                     #warning("Create something flashing in the UI")
+                    
+                    self.audioEngine.play()
                 }
                 .store(in: &store)
         }
