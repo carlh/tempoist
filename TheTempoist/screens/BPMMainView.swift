@@ -20,6 +20,19 @@ struct BPMMainView: View {
                 TapButton(label: vm.pendingTaps ?? "Tap") {
                     vm.tap()
                 }
+                
+                HStack {
+                    Button {
+                        if vm.isPlaying {
+                            vm.stop()
+                        } else {
+                            vm.play()
+                        }
+                    } label: {
+                        Text(vm.isPlaying ? "Stop" : "Play")
+                    }
+                    .buttonStyle(.bordered)
+                }
             }
             .padding()
             

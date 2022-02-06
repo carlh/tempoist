@@ -11,10 +11,13 @@ import Combine
 extension BPMMainView {
     class ViewModel: ObservableObject {
         private let tapEngine = TapTempoEngine()
+        private let haTimer = HighAccuracyTimer()
+        
         private var store: [AnyCancellable] = []
         
         @Published var tempo: String = "0"
         @Published var pendingTaps: String? = nil
+        @Published var isPlaying: Bool = false
         
         private lazy var bpmFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
@@ -52,12 +55,40 @@ extension BPMMainView {
                 .store(in: &store)
         }
         
+        private func subscribeToTimer() {
+            haTimer.timerFired
+                .sink { _ in
+                    #warning("Create AudioEngine and trigger playback of sound.")
+                    #warning("Create HapticEngine and trigger vibration.")
+                    #warning("Create something flashing in the UI")
+                }
+                .store(in: &store)
+        }
+        
         init() {
             subscribeToEngine()
+            subscribeToTimer()
         }
         
         func tap() {
+            // I think I need to either stop playback while there are pending taps or else update the timer each time there's a tap.
+            // I'll see how I like it both ways, but right now there's a bug where the timer doesn't update if you tap while it's playing.
             tapEngine.tap()
+        }
+        
+        func play() {
+            guard tapEngine.tempo > 0 else { return }
+            if !haTimer.started {
+                haTimer.start(repeatDelay: 60.0 / tapEngine.tempo)
+                isPlaying = true
+            }
+        }
+        
+        func stop() {
+            if haTimer.started {
+                haTimer.stop()
+                isPlaying = false
+            }
         }
     }
 }
