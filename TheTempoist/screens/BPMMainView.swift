@@ -21,12 +21,13 @@ struct BPMMainView: View {
                     vm.tap()
                 }
                 
-                HStack {
+                HStack(alignment: .center, spacing: 16) {
+                    audioControlButton()
                     playbackButton()
+                    hapticControlButton()
                 }
             }
             .padding()
-            
         }
         .edgesIgnoringSafeArea(.all)
         
@@ -44,11 +45,40 @@ struct BPMMainView: View {
                 .font(.system(size: 44, weight: .regular, design: .rounded))
                 .padding()
         }
+        .frame(width: 95)
         .background(vm.isPlaying ? .red : .green)
         .foregroundStyle(.regularMaterial)
         .clipShape(Circle())
         .buttonStyle(.bordered)
         
+    }
+    
+    func audioControlButton() -> some View {
+        Button {
+            vm.playAudio.toggle()
+        } label: {
+            Image(systemName: vm.playAudio ? "speaker.fill" : "speaker.slash.fill")
+                .font(.system(size: 24, weight: .regular, design: .rounded))
+                .padding()
+        }
+        .foregroundColor(Color(uiColor: .systemBackground))
+        .background(Color.primary.opacity(0.3))
+        .buttonStyle(.bordered)
+        .clipShape(Circle())
+    }
+    
+    func hapticControlButton() -> some View {
+        Button {
+            vm.playHaptic.toggle()
+        } label: {
+            Image(systemName: vm.playHaptic ? "bolt.fill" : "bolt.slash.fill")
+                .font(.system(size: 24, weight: .regular, design: .rounded))
+                .padding()
+        }
+        .foregroundColor(Color(uiColor: .systemBackground))
+        .background(Color.primary.opacity(0.3))
+        .buttonStyle(.bordered)
+        .clipShape(Circle())
     }
 }
 
