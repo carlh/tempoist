@@ -15,11 +15,14 @@ extension BPMMainView {
         private let audioEngine = AudioEngine()
         private let hapticEngine = HapticEngine()
         
+        let beatsPerMeasure = 4 // Maybe I'll make this configurable in a future update
+        
         private var store: [AnyCancellable] = []
         
         @Published var tempo: String = "0"
         @Published var pendingTaps: String? = nil
         @Published var isPlaying: Bool = false
+        @Published var beatInMeasure: Int = -1
         
         @Published var playHaptic = false {
             didSet {
@@ -77,13 +80,13 @@ extension BPMMainView {
         private func subscribeToTimer() {
             haTimer.timerFired
                 .sink { _ in
-                    #warning("Create something flashing in the UI")
                     self.handleTimerFired()
                 }
                 .store(in: &store)
         }
         
         private func handleTimerFired() {
+            updateBeat()
             if self.playAudio {
                 self.audioEngine.play()
             }
@@ -91,6 +94,10 @@ extension BPMMainView {
             if self.playHaptic {
                 self.hapticEngine.playHaptic()
             }
+        }
+        
+        private func updateBeat() {
+            beatInMeasure = (beatInMeasure + 1) % beatsPerMeasure
         }
         
         private func load() {
@@ -136,6 +143,7 @@ extension BPMMainView {
                 haTimer.stop()
                 isPlaying = false
             }
+            beatInMeasure = -1
         }
     }
 }

@@ -36,7 +36,9 @@ class HighAccuracyTimer: ObservableObject {
         timer?.schedule(deadline: .now(), repeating: repeatDelay, leeway: .nanoseconds(0))
         timer?.setEventHandler {
             // Is there a better way to send a one shot event?  Sending a Bool here is just a hack to send SOMETHING.
-            self.timerFired.send(true)
+            DispatchQueue.main.async {
+                self.timerFired.send(true)
+            }
         }
         timer?.resume()
         started = true
