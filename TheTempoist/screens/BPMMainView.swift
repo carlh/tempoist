@@ -21,11 +21,7 @@ struct BPMMainView: View {
                     vm.tap()
                 }
                 
-                HStack(alignment: .center, spacing: 16) {
-                    audioControlButton()
-                    playbackButton()
-                    hapticControlButton()
-                }
+                playbackControls()
             }
             .padding()
         }
@@ -33,54 +29,38 @@ struct BPMMainView: View {
         
     }
     
+    func playbackControls() -> some View {
+        HStack(alignment: .center, spacing: 16) {
+            audioControlButton()
+            playbackButton()
+            hapticControlButton()
+        }
+    }
+    
     func playbackButton() -> some View {
-        Button {
+        PlaybackButton(imageSystemName: vm.isPlaying ? "stop.fill" : "play.fill",
+                       bgColor: vm.isPlaying ? .red : .green) {
             if vm.isPlaying {
                 vm.stop()
             } else {
                 vm.play()
             }
-        } label: {
-            Image(systemName: vm.isPlaying ? "stop.fill" : "play.fill")
-                .font(.system(size: 44, weight: .regular, design: .rounded))
-                .padding()
         }
-        .frame(width: 95)
-        .background(vm.isPlaying ? .red : .green)
-        .foregroundStyle(.regularMaterial)
-        .clipShape(Circle())
-        .buttonStyle(.bordered)
-        
     }
     
     func audioControlButton() -> some View {
-        Button {
+        ControlButton(imageSystemName: vm.playAudio ? "speaker.fill" : "speaker.slash.fill") {
             vm.playAudio.toggle()
-        } label: {
-            Image(systemName: vm.playAudio ? "speaker.fill" : "speaker.slash.fill")
-                .font(.system(size: 24, weight: .regular, design: .rounded))
-                .padding()
         }
-        .foregroundColor(Color(uiColor: .systemBackground))
-        .background(Color.primary.opacity(0.3))
-        .buttonStyle(.bordered)
-        .clipShape(Circle())
     }
     
     func hapticControlButton() -> some View {
-        Button {
+        ControlButton(imageSystemName: vm.playHaptic ? "bolt.fill" : "bolt.slash.fill") {
             vm.playHaptic.toggle()
-        } label: {
-            Image(systemName: vm.playHaptic ? "bolt.fill" : "bolt.slash.fill")
-                .font(.system(size: 24, weight: .regular, design: .rounded))
-                .padding()
         }
-        .foregroundColor(Color(uiColor: .systemBackground))
-        .background(Color.primary.opacity(0.3))
-        .buttonStyle(.bordered)
-        .clipShape(Circle())
     }
 }
+
 
 struct BPMMainView_Previews: PreviewProvider {
     static var previews: some View {

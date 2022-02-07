@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C33A4B0C27B1504300984EBA /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A4B0B27B1504300984EBA /* HapticEngine.swift */; };
+		C33A4B0E27B1609100984EBA /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A4B0D27B1609100984EBA /* ControlButton.swift */; };
+		C33A4B1027B1611300984EBA /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A4B0F27B1611300984EBA /* PlaybackButton.swift */; };
 		C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */; };
 		C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF7627AA806100E22A57 /* ContentView.swift */; };
 		C39CDF7927AA806200E22A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39CDF7827AA806200E22A57 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		C33A4B0B27B1504300984EBA /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		C33A4B0D27B1609100984EBA /* ControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
+		C33A4B0F27B1611300984EBA /* PlaybackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
 		C39CDF7127AA806100E22A57 /* TheTempoist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheTempoist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTempoistApp.swift; sourceTree = "<group>"; };
 		C39CDF7627AA806100E22A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				C39CDFA827AB4BFF00E22A57 /* Background.swift */,
 				C3BAA2E527AFFE2F0019B81E /* BPMDisplay.swift */,
 				C3BAA2E727AFFEDD0019B81E /* TapButton.swift */,
+				C33A4B0D27B1609100984EBA /* ControlButton.swift */,
+				C33A4B0F27B1611300984EBA /* PlaybackButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 				C3BAA2EB27B001520019B81E /* AudioEngine.swift in Sources */,
 				C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */,
 				C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */,
+				C33A4B1027B1611300984EBA /* PlaybackButton.swift in Sources */,
+				C33A4B0E27B1609100984EBA /* ControlButton.swift in Sources */,
 				C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */,
 				C3BAA2E827AFFEDD0019B81E /* TapButton.swift in Sources */,
 				C3BAA2E627AFFE2F0019B81E /* BPMDisplay.swift in Sources */,
