@@ -43,6 +43,9 @@ extension BPMMainView {
             tapEngine.$tempo
                 .sink { value in
                     self.tempo = self.formatBPM(value: value)
+                    if self.isPlaying, value > 0 {
+                        self.haTimer.updateTimer(repeatDelay: 60.0 / value)
+                    }
                 }
                 .store(in: &store)
             

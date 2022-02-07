@@ -25,6 +25,11 @@ class HighAccuracyTimer: ObservableObject {
         numberFormatter.formatWidth = 5
     }
     
+    func updateTimer(repeatDelay: TimeInterval) {
+        stop()
+        start(repeatDelay: repeatDelay)
+    }
+    
     func start(repeatDelay: TimeInterval) {
         let queue = DispatchQueue(label: "com.carlhinkle.thetempoist.timer", qos: .userInteractive)
         timer = DispatchSource.makeTimerSource(flags: .strict, queue: queue)
