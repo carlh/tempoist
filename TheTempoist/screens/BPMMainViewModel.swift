@@ -21,9 +21,18 @@ extension BPMMainView {
         @Published var pendingTaps: String? = nil
         @Published var isPlaying: Bool = false
         
-        @Published var playHaptic = false
-        @Published var playAudio = false
+        @Published var playHaptic = false {
+            didSet {
+                save(withTempo: tapEngine.tempo)
+            }
+        }
+        @Published var playAudio = false {
+            didSet {
+                save(withTempo: tapEngine.tempo)
+            }
+        }
         
+        private var isInitialized = false
         
         private lazy var bpmFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
@@ -46,6 +55,7 @@ extension BPMMainView {
                     if self.isPlaying, value > 0 {
                         self.haTimer.updateTimer(repeatDelay: 60.0 / value)
                     }
+                    self.save(withTempo: value)
                 }
                 .store(in: &store)
             
@@ -83,9 +93,28 @@ extension BPMMainView {
             }
         }
         
+        private func load() {
+            let defaults = UserDefaults.standard
+            playAudio = defaults.bool(forKey: DefaultsKeys.soundEnabled)
+            playHaptic = defaults.bool(forKey: DefaultsKeys.hapticEnabled)
+            
+            let storedTempo = defaults.double(forKey: DefaultsKeys.tempo)
+            tapEngine.setTempo(storedTempo)
+        }
+        
+        private func save(withTempo tempo: Double) {
+            guard isInitialized else { return }
+            let defaults = UserDefaults.standard
+            defaults.set(playAudio, forKey: DefaultsKeys.soundEnabled)
+            defaults.set(playHaptic, forKey: DefaultsKeys.hapticEnabled)
+            defaults.set(tempo, forKey: DefaultsKeys.tempo)
+        }
+        
         init() {
+            load()
             subscribeToEngine()
             subscribeToTimer()
+            isInitialized = true
         }
         
         func tap() {

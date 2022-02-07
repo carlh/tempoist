@@ -14,7 +14,7 @@ class TapTempoEngine: ObservableObject {
     @Published var pendingTaps: Int? = nil
     
     // Initialize a windowSize element array that will hold the last windowSize tap time differences
-    private var tapSpacing: [Double]
+    private var tapSpacing: [Double] = []
     private var counter = 0
     private var lastTime = Date.now
     
@@ -23,6 +23,14 @@ class TapTempoEngine: ObservableObject {
     private var tapTimer: Timer?
     
     init (initialTempo: Double = 0.0) {
+        setupTempo(initialTempo)
+    }
+    
+    func setTempo(_ tempo: Double) {
+        setupTempo(tempo)
+    }
+    
+    private func setupTempo(_ initialTempo: Double) {
         tempo = initialTempo
         
         // b/m * 1m/60s (Convert to beats per second)
@@ -32,13 +40,13 @@ class TapTempoEngine: ObservableObject {
         tapSpacing = [Double](repeatElement(ms, count: windowSize))
     }
     
-    fileprivate func setTimer() {
+    private func setTimer() {
         tapTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in
             self.numTaps = 0
         })
     }
     
-    fileprivate func initialize() {
+    private func initialize() {
         tapSpacing = [Double](repeating: 0.0, count: windowSize)
         lastTime = Date.now
         numTaps = 1
@@ -46,7 +54,7 @@ class TapTempoEngine: ObservableObject {
         setTimer()
     }
     
-    fileprivate func computeTempo() {
+    private func computeTempo() {
         let sum = tapSpacing.reduce(0) { partialResult, next in
             partialResult + next
         }
