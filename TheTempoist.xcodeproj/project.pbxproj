@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C33A4B0C27B1504300984EBA /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A4B0B27B1504300984EBA /* HapticEngine.swift */; };
 		C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */; };
 		C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CDF7627AA806100E22A57 /* ContentView.swift */; };
 		C39CDF7927AA806200E22A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39CDF7827AA806200E22A57 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C33A4B0B27B1504300984EBA /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		C39CDF7127AA806100E22A57 /* TheTempoist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheTempoist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39CDF7427AA806100E22A57 /* TheTempoistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTempoistApp.swift; sourceTree = "<group>"; };
 		C39CDF7627AA806100E22A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				C39CDF9E27AA821B00E22A57 /* TapTempoEngine.swift */,
 				C3BAA2EA27B001520019B81E /* AudioEngine.swift */,
 				C3BAA2EC27B004B40019B81E /* HighAccuracyTimer.swift */,
+				C33A4B0B27B1504300984EBA /* HapticEngine.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				C3BAA2E627AFFE2F0019B81E /* BPMDisplay.swift in Sources */,
 				C3BAA2ED27B004B40019B81E /* HighAccuracyTimer.swift in Sources */,
 				C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */,
+				C33A4B0C27B1504300984EBA /* HapticEngine.swift in Sources */,
 				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
 				C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */,
 			);

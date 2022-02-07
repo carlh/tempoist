@@ -13,12 +13,17 @@ extension BPMMainView {
         private let tapEngine = TapTempoEngine()
         private let haTimer = HighAccuracyTimer()
         private let audioEngine = AudioEngine()
+        private let hapticEngine = HapticEngine()
         
         private var store: [AnyCancellable] = []
         
         @Published var tempo: String = "0"
         @Published var pendingTaps: String? = nil
         @Published var isPlaying: Bool = false
+        
+        @Published var playHaptic = false
+        @Published var playAudio = false
+        
         
         private lazy var bpmFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
@@ -59,12 +64,20 @@ extension BPMMainView {
         private func subscribeToTimer() {
             haTimer.timerFired
                 .sink { _ in
-                    #warning("Create HapticEngine and trigger vibration.")
                     #warning("Create something flashing in the UI")
-                    
-                    self.audioEngine.play()
+                    self.handleTimerFired()
                 }
                 .store(in: &store)
+        }
+        
+        private func handleTimerFired() {
+            if self.playAudio {
+                self.audioEngine.play()
+            }
+            
+            if self.playHaptic {
+                self.hapticEngine.playHaptic()
+            }
         }
         
         init() {
