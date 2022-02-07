@@ -15,29 +15,39 @@ struct BPMMainView: View {
             Background()
             VStack(spacing: 64) {
                 BPMDisplay(tempo: vm.tempo)
-                    .offset(y: -150)
+                    .offset(y: -100)
                 
                 TapButton(label: vm.pendingTaps ?? "Tap") {
                     vm.tap()
                 }
                 
                 HStack {
-                    Button {
-                        if vm.isPlaying {
-                            vm.stop()
-                        } else {
-                            vm.play()
-                        }
-                    } label: {
-                        Text(vm.isPlaying ? "Stop" : "Play")
-                    }
-                    .buttonStyle(.bordered)
+                    playbackButton()
                 }
             }
             .padding()
             
         }
         .edgesIgnoringSafeArea(.all)
+        
+    }
+    
+    func playbackButton() -> some View {
+        Button {
+            if vm.isPlaying {
+                vm.stop()
+            } else {
+                vm.play()
+            }
+        } label: {
+            Image(systemName: vm.isPlaying ? "stop.fill" : "play.fill")
+                .font(.system(size: 44, weight: .regular, design: .rounded))
+                .padding()
+        }
+        .background(vm.isPlaying ? .red : .green)
+        .foregroundStyle(.regularMaterial)
+        .clipShape(Circle())
+        .buttonStyle(.bordered)
         
     }
 }
