@@ -21,6 +21,7 @@ struct BPMMainView: View {
                 TapButton(label: vm.pendingTaps ?? "Tap") {
                     vm.tap()
                 }
+                .accessibilityLabel(vm.pendingTaps != nil ? "Keep tapping to set tempo." : "Tempo is \(vm.tempo). Tap to change.")
                 
                 playbackControls()
             }
@@ -78,18 +79,21 @@ struct BPMMainView: View {
                 vm.play()
             }
         }
+                       .accessibilityLabel(vm.isPlaying ? "Stop clicks." : "Start clicks.")
     }
     
     func audioControlButton() -> some View {
         ControlButton(imageSystemName: vm.playAudio ? "speaker.fill" : "speaker.slash.fill") {
             vm.playAudio.toggle()
         }
+        .accessibilityLabel(vm.playAudio ? "Mute clicks." : "Play clicks.")
     }
     
     func hapticControlButton() -> some View {
         ControlButton(imageSystemName: vm.playHaptic ? "bolt.fill" : "bolt.slash.fill") {
             vm.playHaptic.toggle()
         }
+        .accessibilityLabel(vm.playHaptic ? "Don't vibrate on clicks." : "Vibrate on clicks.")
     }
 }
 

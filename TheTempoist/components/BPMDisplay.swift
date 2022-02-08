@@ -23,6 +23,8 @@ struct BPMDisplay: View {
         .background(.ultraThinMaterial)
         .clipShape(Circle())
         .shadow(radius: 20)
+        .accessibilityElement()
+        .accessibilityLabel("\(tempo) beats per minute.")
     }
 }
 

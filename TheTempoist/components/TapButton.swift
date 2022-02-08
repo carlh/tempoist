@@ -22,6 +22,7 @@ struct TapButton: View {
         }
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.capsule)
+        .accessibilityLabel("Tap to set tempo.")
     }
 }
 
