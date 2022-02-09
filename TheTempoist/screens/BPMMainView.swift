@@ -18,10 +18,7 @@ struct BPMMainView: View {
                 
                 beatDisplay()
                 
-                TapButton(label: vm.pendingTaps ?? "Tap") {
-                    vm.tap()
-                }
-                .accessibilityLabel(vm.pendingTaps != nil ? "Keep tapping to set tempo." : "Tempo is \(vm.tempo). Tap to change.")
+                tempoEntryRow()
                 
                 playbackControls()
             }
@@ -29,6 +26,35 @@ struct BPMMainView: View {
         }
         .edgesIgnoringSafeArea(.all)
         
+    }
+    
+    func tempoEntryRow() -> some View {
+        HStack {
+            Button {
+                vm.decrementTempo()
+            } label: {
+                Image(systemName: "minus")
+                    .frame(width: 42, height: 42)
+            }
+            .buttonStyle(.bordered)
+            .clipShape(Circle())
+            .accessibilityLabel("Decrease tempo.")
+            
+            TapButton(label: vm.pendingTaps ?? "Tap") {
+                vm.tap()
+            }
+            .accessibilityLabel(vm.pendingTaps != nil ? "Keep tapping to set tempo." : "Tempo is \(vm.tempo). Tap to change.")
+            
+            Button {
+                vm.incrementTempo()
+            } label: {
+                Image(systemName: "plus")
+                    .frame(width: 42, height: 42)
+            }
+            .buttonStyle(.bordered)
+            .clipShape(Circle())
+            .accessibilityLabel("Increase tempo.")
+        }
     }
     
     func beatDisplay() -> some View {

@@ -130,6 +130,19 @@ extension BPMMainView {
             tapEngine.tap()
         }
         
+        func incrementTempo() {
+            let tempo = Int(tapEngine.tempo)
+            tapEngine.setTempo(Double(tempo + 1))
+        }
+        
+        func decrementTempo() {
+            let tempo = Int(tapEngine.tempo)
+            if tempo < 1 {
+                return
+            }
+            tapEngine.setTempo(Double(tempo - 1))
+        }
+        
         func play() {
             guard tapEngine.tempo > 0 else { return }
             if !haTimer.started {
