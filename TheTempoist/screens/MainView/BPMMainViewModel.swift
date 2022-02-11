@@ -35,6 +35,8 @@ extension BPMMainView {
             }
         }
         
+        @Published var showInfoView = false
+        
         private var isInitialized = false
         
         private lazy var bpmFormatter: NumberFormatter = {

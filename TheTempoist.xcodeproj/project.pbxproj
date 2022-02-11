@@ -26,6 +26,7 @@
 		C3BAA2E827AFFEDD0019B81E /* TapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAA2E727AFFEDD0019B81E /* TapButton.swift */; };
 		C3BAA2EB27B001520019B81E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAA2EA27B001520019B81E /* AudioEngine.swift */; };
 		C3BAA2ED27B004B40019B81E /* HighAccuracyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BAA2EC27B004B40019B81E /* HighAccuracyTimer.swift */; };
+		C3D4C1EE27B667710001577C /* InfoNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1ED27B667710001577C /* InfoNavView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C3BAA2E927AFFFD00019B81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C3BAA2EA27B001520019B81E /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		C3BAA2EC27B004B40019B81E /* HighAccuracyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighAccuracyTimer.swift; sourceTree = "<group>"; };
+		C3D4C1ED27B667710001577C /* InfoNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNavView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +159,8 @@
 		C39CDFA427AA888500E22A57 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */,
-				C39CDFA227AA883B00E22A57 /* BPMMainView.swift */,
+				C3D4C1EC27B667560001577C /* InfoView */,
+				C3D4C1EB27B667450001577C /* MainView */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -195,6 +197,23 @@
 				C33A4B0F27B1611300984EBA /* PlaybackButton.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		C3D4C1EB27B667450001577C /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				C39CDFA027AA851200E22A57 /* BPMMainViewModel.swift */,
+				C39CDFA227AA883B00E22A57 /* BPMMainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		C3D4C1EC27B667560001577C /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				C3D4C1ED27B667710001577C /* InfoNavView.swift */,
+			);
+			path = InfoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +360,7 @@
 				C33A4B0C27B1504300984EBA /* HapticEngine.swift in Sources */,
 				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
 				C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */,
+				C3D4C1EE27B667710001577C /* InfoNavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

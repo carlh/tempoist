@@ -13,6 +13,7 @@ struct BPMMainView: View {
     var body: some View {
         ZStack {
             Background()
+                .edgesIgnoringSafeArea(.all)
             VStack(spacing: 64) {
                 BPMDisplay(tempo: vm.tempo)
                 
@@ -23,8 +24,28 @@ struct BPMMainView: View {
                 playbackControls()
             }
             .padding()
+            
+            
+            HStack {
+                Spacer()
+                VStack {
+                    Button {
+                        vm.showInfoView = true
+                    } label: {
+                        Image(systemName: "info.circle.fill")
+                            .font(.system(size: 28, weight: .regular, design: .rounded))
+                    }
+                    Spacer()
+                }
+            }
+            .padding()
         }
-        .edgesIgnoringSafeArea(.all)
+        .sheet(isPresented: $vm.showInfoView, onDismiss: {
+         
+        }, content: {
+            InfoNavView()
+        })
+        
         
     }
     
