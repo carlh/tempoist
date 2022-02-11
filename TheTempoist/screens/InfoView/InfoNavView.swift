@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+private struct InfoNavLink: View {
+    var text: Text
+    var body: some View {
+        HStack {
+            text
+                .font(.system(.title2, design: .rounded))
+                .fontWeight(.light)
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+        .padding()
+    }
+}
+
 struct InfoNavView: View {
     @Environment(\.dismiss) private var dismiss
     
@@ -15,31 +29,38 @@ struct InfoNavView: View {
             ZStack(alignment: .topLeading) {
                 Background()
                     .edgesIgnoringSafeArea(.all)
-                VStack(spacing: 32) {
-                    NavigationLink {
-                        Text("Details")
-                    } label: {
-                        HStack {
-                            Text("About me")
-                                .font(.system(.title, design: .rounded))
-                                .fontWeight(.light)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                        }
-                        .padding()
-                    }
-                }
-                .padding()
-                .navigationTitle("Info")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button {
-                            dismiss()
+                ScrollView {
+                    VStack {
+                        NavigationLink {
+                            AboutMeInfoView()
                         } label: {
-                            Text("Close")
+                            InfoNavLink(text: Text("About me"))
+                        }
+                        
+                        NavigationLink {
+                            OtherAppsInfoView()
+                        } label: {
+                            InfoNavLink(text: Text("Other apps"))
+                        }
+                        
+                        NavigationLink {
+                            ContactMeInfoView()
+                        } label: {
+                            InfoNavLink(text: Text("Contact me"))
                         }
                     }
+                    .padding()
+                    .navigationTitle("Info")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .primaryAction) {
+                            Button {
+                                dismiss()
+                            } label: {
+                                Text("Close")
+                            }
+                        }
+                }
                 }
             }
         }
