@@ -30,6 +30,10 @@
 		C3D4C1F027B671570001577C /* AboutMeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1EF27B671570001577C /* AboutMeInfoView.swift */; };
 		C3D4C1F227B671640001577C /* OtherAppsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1F127B671640001577C /* OtherAppsInfoView.swift */; };
 		C3D4C1F427B671780001577C /* ContactMeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1F327B671780001577C /* ContactMeInfoView.swift */; };
+		C3D4C1F627B7D0240001577C /* LeaveReviewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1F527B7D0240001577C /* LeaveReviewButton.swift */; };
+		C3D4C1F827B7D05D0001577C /* SendEmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1F727B7D05D0001577C /* SendEmailButton.swift */; };
+		C3D4C1FB27B809600001577C /* SendEmailButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */; };
+		C3D4C1FD27B809B70001577C /* MFMailComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1FC27B809B70001577C /* MFMailComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		C3D4C1EF27B671570001577C /* AboutMeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeInfoView.swift; sourceTree = "<group>"; };
 		C3D4C1F127B671640001577C /* OtherAppsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsInfoView.swift; sourceTree = "<group>"; };
 		C3D4C1F327B671780001577C /* ContactMeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMeInfoView.swift; sourceTree = "<group>"; };
+		C3D4C1F527B7D0240001577C /* LeaveReviewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveReviewButton.swift; sourceTree = "<group>"; };
+		C3D4C1F727B7D05D0001577C /* SendEmailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailButton.swift; sourceTree = "<group>"; };
+		C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailButtonViewModel.swift; sourceTree = "<group>"; };
+		C3D4C1FC27B809B70001577C /* MFMailComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFMailComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +209,7 @@
 				C3BAA2E727AFFEDD0019B81E /* TapButton.swift */,
 				C33A4B0D27B1609100984EBA /* ControlButton.swift */,
 				C33A4B0F27B1611300984EBA /* PlaybackButton.swift */,
+				C3D4C1FC27B809B70001577C /* MFMailComposeView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -221,8 +230,19 @@
 				C3D4C1EF27B671570001577C /* AboutMeInfoView.swift */,
 				C3D4C1F127B671640001577C /* OtherAppsInfoView.swift */,
 				C3D4C1F327B671780001577C /* ContactMeInfoView.swift */,
+				C3D4C1F527B7D0240001577C /* LeaveReviewButton.swift */,
+				C3D4C1F927B809470001577C /* SendEmailButton */,
 			);
 			path = InfoView;
+			sourceTree = "<group>";
+		};
+		C3D4C1F927B809470001577C /* SendEmailButton */ = {
+			isa = PBXGroup;
+			children = (
+				C3D4C1F727B7D05D0001577C /* SendEmailButton.swift */,
+				C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */,
+			);
+			path = SendEmailButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,8 +377,10 @@
 			files = (
 				C3BAA2EB27B001520019B81E /* AudioEngine.swift in Sources */,
 				C33A4B1227B17FF900984EBA /* Constants.swift in Sources */,
+				C3D4C1F827B7D05D0001577C /* SendEmailButton.swift in Sources */,
 				C39CDFA327AA883B00E22A57 /* BPMMainView.swift in Sources */,
 				C39CDF7727AA806100E22A57 /* ContentView.swift in Sources */,
+				C3D4C1F627B7D0240001577C /* LeaveReviewButton.swift in Sources */,
 				C3D4C1F027B671570001577C /* AboutMeInfoView.swift in Sources */,
 				C33A4B1027B1611300984EBA /* PlaybackButton.swift in Sources */,
 				C33A4B0E27B1609100984EBA /* ControlButton.swift in Sources */,
@@ -371,6 +393,8 @@
 				C3D4C1F427B671780001577C /* ContactMeInfoView.swift in Sources */,
 				C39CDFA127AA851200E22A57 /* BPMMainViewModel.swift in Sources */,
 				C39CDFA927AB4BFF00E22A57 /* Background.swift in Sources */,
+				C3D4C1FB27B809600001577C /* SendEmailButtonViewModel.swift in Sources */,
+				C3D4C1FD27B809B70001577C /* MFMailComposeView.swift in Sources */,
 				C3D4C1F227B671640001577C /* OtherAppsInfoView.swift in Sources */,
 				C3D4C1EE27B667710001577C /* InfoNavView.swift in Sources */,
 			);

@@ -52,17 +52,7 @@ struct InfoNavView: View {
                         
                         Text("If you find Tempoist useful, I'd really appreciate it if you would tap the button below and leave a review on the App Store.")
                             .font(.system(.subheadline, design: .rounded))
-                        Button {
-                            guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id1609335829?action=write-review")
-                            else { return }
-                            Task {
-                                await UIApplication.shared.open(writeReviewURL, options: [:])
-                            }
-                            
-                        } label: {
-                            Text("Leave review")
-                        }
-                        .buttonStyle(.bordered)
+                        LeaveReviewButton()
                     }
                     .padding()
                     .navigationTitle("Info")
