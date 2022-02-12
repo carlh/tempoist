@@ -34,6 +34,7 @@
 		C3D4C1F827B7D05D0001577C /* SendEmailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1F727B7D05D0001577C /* SendEmailButton.swift */; };
 		C3D4C1FB27B809600001577C /* SendEmailButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */; };
 		C3D4C1FD27B809B70001577C /* MFMailComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1FC27B809B70001577C /* MFMailComposeView.swift */; };
+		C3D4C20027B80C610001577C /* CHHapticEngine+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4C1FF27B80C610001577C /* CHHapticEngine+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C3D4C1F727B7D05D0001577C /* SendEmailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailButton.swift; sourceTree = "<group>"; };
 		C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailButtonViewModel.swift; sourceTree = "<group>"; };
 		C3D4C1FC27B809B70001577C /* MFMailComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFMailComposeView.swift; sourceTree = "<group>"; };
+		C3D4C1FF27B80C610001577C /* CHHapticEngine+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CHHapticEngine+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		C39CDF7327AA806100E22A57 /* TheTempoist */ = {
 			isa = PBXGroup;
 			children = (
+				C3D4C1FE27B80C3C0001577C /* extensions */,
 				C3BAA2E927AFFFD00019B81E /* Info.plist */,
 				C39CDFA727AB4BEB00E22A57 /* components */,
 				C39CDFA527AA888B00E22A57 /* domain */,
@@ -243,6 +246,14 @@
 				C3D4C1FA27B809600001577C /* SendEmailButtonViewModel.swift */,
 			);
 			path = SendEmailButton;
+			sourceTree = "<group>";
+		};
+		C3D4C1FE27B80C3C0001577C /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3D4C1FF27B80C610001577C /* CHHapticEngine+Ext.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				C33A4B0E27B1609100984EBA /* ControlButton.swift in Sources */,
 				C39CDF7527AA806100E22A57 /* TheTempoistApp.swift in Sources */,
 				C3BAA2E827AFFEDD0019B81E /* TapButton.swift in Sources */,
+				C3D4C20027B80C610001577C /* CHHapticEngine+Ext.swift in Sources */,
 				C3BAA2E627AFFE2F0019B81E /* BPMDisplay.swift in Sources */,
 				C3BAA2ED27B004B40019B81E /* HighAccuracyTimer.swift in Sources */,
 				C39CDF9F27AA821B00E22A57 /* TapTempoEngine.swift in Sources */,

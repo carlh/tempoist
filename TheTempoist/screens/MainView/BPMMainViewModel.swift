@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreHaptics
 
 extension BPMMainView {
     class ViewModel: ObservableObject {
@@ -36,6 +37,10 @@ extension BPMMainView {
         }
         
         @Published var showInfoView = false
+        
+        var canPlayHaptics = {
+            return CHHapticEngine.deviceSupportsHaptics()
+        }
         
         private var isInitialized = false
         

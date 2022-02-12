@@ -113,7 +113,9 @@ struct BPMMainView: View {
         HStack(alignment: .center, spacing: 16) {
             audioControlButton()
             playbackButton()
-            hapticControlButton()
+            if vm.canPlayHaptics() {
+                hapticControlButton()
+            }
         }
     }
     
