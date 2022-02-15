@@ -43,6 +43,7 @@ class TapTempoEngine: ObservableObject {
     private func setTimer() {
         tapTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false, block: { _ in
             self.numTaps = 0
+            self.pendingTaps = nil
         })
     }
     
@@ -91,6 +92,7 @@ class TapTempoEngine: ObservableObject {
             // Don't start computing the average until the window is full
             // Update the pending taps status
             pendingTaps = windowSize - numTaps + 1
+            setTimer()
             return
         }
         
