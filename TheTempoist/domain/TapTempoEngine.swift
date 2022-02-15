@@ -7,15 +7,21 @@
 
 import Foundation
 
-fileprivate let windowSize = 3
+
 
 class TapTempoEngine: ObservableObject {
+    /// The tempo, calculated based on the tap BPM or from direct entry.  Can be set directly.
     @Published var tempo: Double = 0.0
+    /// The number of taps remaining before we calculate the tempo.
     @Published var pendingTaps: Int? = nil
     
-    // Initialize a windowSize element array that will hold the last windowSize tap time differences
+    /// Size of the circular array used to calculate the rolling average.
+    private let windowSize = 3
+    /// Holds the `windowSize` times between taps, used to compute the rolling average.
     private var tapSpacing: [Double] = []
+    /// Stores the current step count in the range of 0 <= `counter` < `windowSize`.
     private var counter = 0
+    /// Keeps the time of the last tap, used to determine the tap spacing.
     private var lastTime = Date.now
     
     // There needs to be at least windowSize taps before we start updating, the counter should be reset after 2 seconds
