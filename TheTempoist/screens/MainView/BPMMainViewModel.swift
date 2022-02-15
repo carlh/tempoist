@@ -132,18 +132,16 @@ extension BPMMainView {
         }
         
         func tap() {
-            // I think I need to either stop playback while there are pending taps or else update the timer each time there's a tap.
-            // I'll see how I like it both ways, but right now there's a bug where the timer doesn't update if you tap while it's playing.
             tapEngine.tap()
         }
         
         func incrementTempo() {
-            let tempo = Int(tapEngine.tempo)
+            let tempo = floor(tapEngine.tempo)
             tapEngine.setTempo(Double(tempo + 1))
         }
         
         func decrementTempo() {
-            let tempo = Int(tapEngine.tempo)
+            let tempo = ceil(tapEngine.tempo)
             if tempo < 1 {
                 return
             }
