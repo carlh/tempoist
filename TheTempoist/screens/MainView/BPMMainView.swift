@@ -80,7 +80,7 @@ struct BPMMainView: View {
     
     func beatDisplay() -> some View {
         HStack(alignment: .center, spacing: 30) {
-            ForEach(0..<vm.beatsPerMeasure) { i in
+            ForEach(0..<vm.beatsPerMeasure, id: \.self) { i in
                 if !vm.isPlaying {
                     emptyBeat()
                 } else if i <= vm.beatInMeasure {

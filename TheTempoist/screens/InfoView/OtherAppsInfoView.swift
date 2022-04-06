@@ -14,10 +14,10 @@ struct OtherAppsInfoView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(spacing: 24) {
-                    Text("Tunelyzer")
+                    Text("Get Tuned")
                         .font(.system(.largeTitle, design: .rounded))
                     
-                    Image("TunelyzerIcon")
+                    Image("GetTuned")
                         .resizable()
                         .frame(width: 167, height: 167)
                         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -26,10 +26,10 @@ struct OtherAppsInfoView: View {
                         .multilineTextAlignment(.leading)
                     
                     Button {
-                        guard let tunelyzerURL = URL(string: "https://apps.apple.com/app/id1440592987")
+                        guard let getTunedUrl = URL(string: "https://apps.apple.com/app/id1440592987")
                         else { return }
                         Task {
-                            await UIApplication.shared.open(tunelyzerURL, options: [:])
+                            await UIApplication.shared.open(getTunedUrl, options: [:])
                         }
                     } label: {
                         Text("Open in app store")

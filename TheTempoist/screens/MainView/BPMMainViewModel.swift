@@ -16,7 +16,7 @@ extension BPMMainView {
         private let audioEngine = AudioEngine()
         private let hapticEngine = HapticEngine()
         
-        let beatsPerMeasure = 4 // Maybe I'll make this configurable in a future update
+        let beatsPerMeasure: Int = 4 // Maybe I'll make this configurable in a future update
         
         private var store: [AnyCancellable] = []
         
